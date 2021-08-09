@@ -90,7 +90,7 @@
                 </div>
                 <div class="card-footer">
                   <div class="text-right">
-        <button type="button" class="btn btn-block btn-secondary"><i class="fas fa-money-bill"></i>&nbsp;&nbsp;ค้นหา</button>
+        <button type="button" class="btn btn-block btn-info">ค้นหา</button>
                   </div>
                 </div>
               </div>

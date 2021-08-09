@@ -2,10 +2,14 @@
   <div class="home">
     <div class="content">
       <Navbar />
+      <br>
+      <h3 class="row gx-3 gy-2 align-items-center"><center>ลอตเตอรี่ออนไลน์</center></h3>
+      <p class="row gx-3 gy-2 align-items-center text-danger"><center>ลอตเตอรี่งวดวันที่ {{ deadlinedate }}</center></p>
       <h3 class="row gx-3 gy-2 align-items-center">
-        <center>Comming Soon: {{ deadline1ts }}</center>
+        <center>Comming Soon: {{ deadlinedate }}</center>
       </h3>
       <flip-countdown :deadline="deadline1ts"></flip-countdown>
+      <Lotto />
     </div>
     <Footer />
   </div>
@@ -15,28 +19,28 @@
 import FlipCountdown from "vue2-flip-countdown";
 import Navbar from "../components/Navbar.vue";
 import Footer from "../components/Footer.vue";
+import Lotto from "../components/Lotto.vue";
 
 import moment from "moment";
-const fmt = "YYYY-MM-DD HH:mm:ss";
+//const fmt = "YYYY-MM-DD";
+const DASH_DMY = 'DD-MM-YYYY';
 export default {
   name: "app",
   components: {
     FlipCountdown,
     Navbar,
     Footer,
+    Lotto,
   },
   data() {
     return {
       deadline1ts: "2021-10-01",
-      deadline2: moment().add(30, "s").format(fmt),
-      deadline3: moment().add(1000, "d").add(10, "s").format(fmt),
-      deadline4: moment().add(2, "h").format(fmt),
-      deadline5: moment().add(24, "h").format(fmt),
+      deadlinedate :"01-10-2021"
     };
   },
   computed: {
     deadline1: function () {
-      return moment(this.deadline1ts).format(fmt);
+      return moment(this.deadlinedate).format(DASH_DMY); 
     },
   },
   methods: {

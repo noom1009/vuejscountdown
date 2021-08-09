@@ -4,6 +4,8 @@
   </div>
 </template>
 
-<style lang="scss">
-
+<style>
+.main-footer {
+    margin-left: 0px;
+}
 </style>
